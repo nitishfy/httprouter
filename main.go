@@ -35,5 +35,6 @@ func main() {
 	router := httprouter.New()
 	router.GET("/carts/", operations.GetAllCarts)
 	router.GET("/carts/:id", operations.GetCart)
+	router.GET("/carts", operations.LimitResult)
 	log.Fatal(http.ListenAndServe(":8081", router))
 }
